@@ -22,21 +22,21 @@ public abstract class AbstractResolver implements Resolver{
         throw new IllegalStateException("Init method should be called only once");
     }
 
-    public void resolve(Step step, boolean decision) {
+    public String resolve(Step step, boolean decision) {
         if(step==thisStep){
-            resolveDecision(decision);
+            return resolveDecision(decision);
         } else {
-            next.resolve(step, decision);
+            return next.resolve(step, decision);
         }
     }
 
-    private void resolveDecision(boolean decision){
+    private String resolveDecision(boolean decision){
         if(decision){
-            doResolve(decision);
+            return doResolve(decision);
         } else {
-            failResolver.resolve(thisStep, decision);
+            return failResolver.resolve(thisStep, decision);
         }
     }
 
-    protected abstract void doResolve(boolean decision);
+    protected abstract String doResolve(boolean decision);
 }

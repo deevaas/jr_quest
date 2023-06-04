@@ -4,5 +4,5 @@ import ru.creograf.quest.steps.Step;
 
 public interface Resolver
 {
-    void resolve(Step step, boolean decision);
+    String resolve(Step step, boolean decision);
 }

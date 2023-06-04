@@ -7,7 +7,10 @@ public class TellMeResolver extends AbstractResolver{
         super(fail, Step.TELL_ME_ABOUT_YOU);
     }
 
-    protected void doResolve(boolean decision) {
-        System.out.println("Tell me resolver");
+    protected String doResolve(boolean decision) {
+        return """
+        <html><body><p>You have been returned home. You win</p>
+        <a href="/jr_query_war" class="button">Play again</a>  
+        """;
     }
 }

@@ -17,7 +17,7 @@ public class Demo {
         ((AbstractResolver)captainResolver).init(tellmeResolver);
         ((AbstractResolver)tellmeResolver).init(failResolver);
 
-        greetingResolver.resolve(Step.TELL_ME_ABOUT_YOU, true);
+        System.out.println(greetingResolver.resolve(Step.TELL_ME_ABOUT_YOU, true));
 
     }
 }

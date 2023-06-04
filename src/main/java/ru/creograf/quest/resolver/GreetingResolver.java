@@ -9,7 +9,11 @@ public class GreetingResolver extends AbstractResolver{
     }
 
     @Override
-    protected void doResolve(boolean decision) {
-        System.out.println("resolve greetings");
+    protected String doResolve(boolean decision) {
+        return """
+        <html><body><p>You have lost your memory. Accept the ufo challenge?</p>
+        <a href="/jr_query_war/step?step=BRIDGE&decision=true" class="button">Accept</a>
+        <a href="/jr_query_war/step?step=BRIDGE&decision=false" class="button">Cancel</a>
+        """;
     }
 }

@@ -8,7 +8,11 @@ public class BridgeResolver extends AbstractResolver {
     }
 
     @Override
-    protected void doResolve(boolean decision) {
-        System.out.println("bridge resolver");
+    protected String doResolve(boolean decision) {
+        return """
+        <html><body><p>You accepted the challenge. Are you going up to the captain's bridge?</p>
+        <a href="/jr_query_war/step?step=CAPTAIN&decision=true" class="button">Go to bridge</a>
+        <a href="/jr_query_war/step?step=CAPTAIN&decision=false" class="button">Cancel</a>
+        """;
     }
 }

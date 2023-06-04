@@ -7,7 +7,11 @@ public class CaptainResolver extends AbstractResolver {
         super(fail, Step.CAPTAIN);
     }
 
-    protected void doResolve(boolean decision) {
-        System.out.println("captain resolver");
+    protected String doResolve(boolean decision) {
+        return """
+                <html><body><p>You have come the bridge. Who are you?</p>
+                <a href="/jr_query_war/step?step=TELL_ME_ABOUT_YOU&decision=true" class="button">Tell the truth</a>
+                <a href="/jr_query_war/step?step=TELL_ME_ABOUT_YOU&decision=false" class="button">Lie</a>
+                """;
     }
 }

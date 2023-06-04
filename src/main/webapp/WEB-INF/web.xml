@@ -3,5 +3,16 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>Archetype Created Web Application</display-name>
+  <display-name>Quest Game</display-name>
+  
+  <servlet>
+    <servlet-name>StepServlet</servlet-name>
+    <display-name>StepServlet</display-name>
+    <servlet-class>ru.creograf.quest.StepServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>StepServlet</servlet-name>
+    <url-pattern>/step</url-pattern>
+  </servlet-mapping>
 </web-app>
